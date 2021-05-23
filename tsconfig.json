@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "declaration": true,
+    "outDir": "temp/tsc",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "target": "es2016"
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "files": [
+    "src/index.ts"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "@chin98edwin/dev-utils",
+  "version": "1.0.0",
+  "description": "Dev utilities for building libraries",
+  "author": "chin98edwin",
+  "license": "MIT",
+  "homepage": "https://github.com/chin98edwin/dev-utils#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chin98edwin/dev-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chin98edwin/dev-utils/issues"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "index.d.ts",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build": "rollup -c rollup.config.js && tsc",
+    "postbuild": "mv temp/tsc/index.d.ts index.d.ts && rm -r temp/tsc",
+    "test": "jest -c jest.config.js",
+    "all": "yarn run lint:fix && yarn run build && yarn test && yarn pack"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.14.0",
+    "@babel/preset-typescript": "^7.13.0",
+    "@rollup/plugin-typescript": "^8.2.1",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.6.0",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "eslint": "^7.27.0",
+    "jest": "^26.6.3",
+    "rollup": "^2.48.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.2.4"
+  }
+}
